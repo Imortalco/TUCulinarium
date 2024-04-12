@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TUKulinarium_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3e4e5e91e5e7867697fdf82f1f57f8ea96cd97a3")]
 [assembly: System.Reflection.AssemblyProductAttribute("TUKulinarium_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TUKulinarium_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

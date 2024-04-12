@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\TUKulinarium_API.props" />
+</Project>

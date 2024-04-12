@@ -1,3 +1,4 @@
 {
-	"dotnet.defaultSolution": "TUKulinarium_API.sln"
+	"dotnet.defaultSolution": "TUKulinarium_API.sln",
+	"cSpell.words": ["Kulinarium"]
 }
