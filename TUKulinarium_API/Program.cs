@@ -22,7 +22,8 @@ services.AddIdentityApiEndpoints<User>(opt =>
     opt.SignIn.RequireConfirmedPhoneNumber = false;
     opt.SignIn.RequireConfirmedAccount = false;
 })
-.AddEntityFrameworkStores<DataContext>();
+.AddEntityFrameworkStores<DataContext>()
+.AddDefaultTokenProviders();
 
 services.ConfigureApplicationCookie(options => { options.Cookie.SameSite = SameSiteMode.None; });
 
@@ -74,15 +75,7 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         }
     };
 
-})
-.AddGoogle((options =>
-        {
-            IConfigurationSection googleAuthNSection =
-                configuration.GetSection("Authentication:Google");
-
-            options.ClientId = googleAuthNSection["ClientId"];
-            options.ClientSecret = googleAuthNSection["ClientSecret"];
-        }));
+});
 
 services.AddDbContext<DataContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DataContext")));
