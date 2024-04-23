@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -51,6 +56,10 @@
             "IdentityFramework.EntityFramework": {
               "target": "Package",
               "version": "[2.3.1, )"
+            },
+            "Microsoft.AspNet.Cors": {
+              "target": "Package",
+              "version": "[5.3.0, )"
             },
             "Microsoft.AspNet.Identity.EntityFramework": {
               "target": "Package",
@@ -120,7 +129,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

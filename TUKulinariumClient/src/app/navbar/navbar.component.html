@@ -1,0 +1,73 @@
+<header>
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="../../assets/9150524.png" alt="Food Logo" height="36" />
+      </a>
+
+      <!-- Toggle button for mobile -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar items -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav main-nav-items">
+          <!-- Home -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <!-- Menu dropdown -->
+          <li ngbDropdown class="nav-item dropdown">
+            <div
+              class="nav-link dropdown-toggle"
+              id="menuDropdown"
+              ngbDropdownToggle
+            >
+              Menu
+            </div>
+            <div ngbDropdownMenu aria-labelledby="menuDropdown">
+              <a class="dropdown-item" href="#">Appetizers</a>
+              <a class="dropdown-item" href="#">Main Courses</a>
+              <a class="dropdown-item" href="#">Desserts</a>
+            </div>
+          </li>
+          <!-- Contact -->
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact</a>
+          </li>
+        </ul>
+
+        <!-- User profile dropdown -->
+        <div class="collapse navbar-collapse" id="navbarProfileDropdown">
+          <ul class="navbar-nav mr-auto">
+            <li ngbDropdown class="nav-item dropdown">
+              <div
+                class="nav-link dropdown-toggle"
+                id="profileDropdown"
+                ngbDropdownToggle
+                >
+                <i class="fa fa-user-circle" aria-hidden="true">username</i>
+              </div>
+              <div ngbDropdownMenu aria-labelledby="profileDropdown">
+                <a class="dropdown-item" href="#">Profile</a>
+                <a class="dropdown-item" href="#">Orders</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

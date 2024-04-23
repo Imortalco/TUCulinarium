@@ -6,9 +6,8 @@ namespace TUKulinarium_API.Data.Models
     public class UserProfile
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid ProfileId { get; set; }
-        [ForeignKey("User")]
-        public string UserId { get; set; }
         [Required]
         [MaxLength(100)]
         public string UserName { get; set; }
@@ -25,7 +24,9 @@ namespace TUKulinarium_API.Data.Models
         [Phone(ErrorMessage = "Enter a valid number")]
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
-        
+
+        [ForeignKey("User")]
+        public string UserId { get; set; }
         public User User { get; set; }
         public ICollection<Order> Orders { get; set; }
         public ICollection<PaymentInfo> Payments { get; set; }

@@ -183,7 +183,7 @@ namespace TUKulinarium_API.Migrations
 
                     b.HasKey("DishId");
 
-                    b.ToTable("Burgers", (string)null);
+                    b.ToTable("Burgers");
                 });
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.Dessert", b =>
@@ -204,7 +204,7 @@ namespace TUKulinarium_API.Migrations
 
                     b.HasKey("DishId");
 
-                    b.ToTable("Desserts", (string)null);
+                    b.ToTable("Desserts");
                 });
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.Drink", b =>
@@ -231,7 +231,7 @@ namespace TUKulinarium_API.Migrations
 
                     b.HasKey("DishId");
 
-                    b.ToTable("Drinks", (string)null);
+                    b.ToTable("Drinks");
                 });
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.Order", b =>
@@ -251,14 +251,50 @@ namespace TUKulinarium_API.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("ProfileUserId")
+                    b.Property<Guid>("UserProfileProfileId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("OrderId");
 
-                    b.HasIndex("ProfileUserId");
+                    b.HasIndex("UserProfileProfileId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("TUKulinarium_API.Data.Models.PaymentInfo", b =>
+                {
+                    b.Property<int>("PaymentId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
+
+                    b.Property<string>("CardHolderName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CardProvider")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("ExpirationDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("ProfileId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<int>("SecurityCode")
+                        .HasColumnType("int");
+
+                    b.HasKey("PaymentId");
+
+                    b.HasIndex("ProfileId");
+
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.Pizza", b =>
@@ -292,7 +328,7 @@ namespace TUKulinarium_API.Migrations
 
                     b.HasKey("DishId");
 
-                    b.ToTable("Pizzas", (string)null);
+                    b.ToTable("Pizzas");
                 });
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.Salad", b =>
@@ -313,7 +349,7 @@ namespace TUKulinarium_API.Migrations
 
                     b.HasKey("DishId");
 
-                    b.ToTable("Salad", (string)null);
+                    b.ToTable("Salad");
                 });
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.Side", b =>
@@ -334,7 +370,7 @@ namespace TUKulinarium_API.Migrations
 
                     b.HasKey("DishId");
 
-                    b.ToTable("Sides", (string)null);
+                    b.ToTable("Sides");
                 });
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.User", b =>
@@ -404,9 +440,13 @@ namespace TUKulinarium_API.Migrations
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.UserProfile", b =>
                 {
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid>("ProfileId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -414,19 +454,33 @@ namespace TUKulinarium_API.Migrations
 
                     b.Property<string>("FirstName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("LastName")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("PhoneNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("UserId");
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
-                    b.ToTable("Profiles", (string)null);
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("ProfileId");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("UserProfiles");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -484,7 +538,18 @@ namespace TUKulinarium_API.Migrations
                 {
                     b.HasOne("TUKulinarium_API.Data.Models.UserProfile", "UserProfile")
                         .WithMany("Orders")
-                        .HasForeignKey("ProfileUserId")
+                        .HasForeignKey("UserProfileProfileId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("UserProfile");
+                });
+
+            modelBuilder.Entity("TUKulinarium_API.Data.Models.PaymentInfo", b =>
+                {
+                    b.HasOne("TUKulinarium_API.Data.Models.UserProfile", "UserProfile")
+                        .WithMany("Payments")
+                        .HasForeignKey("ProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -493,7 +558,26 @@ namespace TUKulinarium_API.Migrations
 
             modelBuilder.Entity("TUKulinarium_API.Data.Models.UserProfile", b =>
                 {
+                    b.HasOne("TUKulinarium_API.Data.Models.User", "User")
+                        .WithOne("UserProfile")
+                        .HasForeignKey("TUKulinarium_API.Data.Models.UserProfile", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("TUKulinarium_API.Data.Models.User", b =>
+                {
+                    b.Navigation("UserProfile")
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("TUKulinarium_API.Data.Models.UserProfile", b =>
+                {
                     b.Navigation("Orders");
+
+                    b.Navigation("Payments");
                 });
 #pragma warning restore 612, 618
         }

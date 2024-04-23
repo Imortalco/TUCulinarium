@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "j1ia9vS8LlZOc8NpAuH1sv4Gx401l732wXQa70b+HBh3Nv9BeYbm2YyyZ3ypqf0mfeVMMtrvuoNk+LAMY641Bg==",
+  "dgSpecHash": "vt0MTsj/UNCwVNCf+uVl7Uu5buTLxSngnKVSd1GR9kquLoVWb0mrzmSqM7Ck94au6rs454sRvZSHB8F3Dh6h/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\TUKulinarium_API.csproj",
   "expectedPackageFiles": [
@@ -12,6 +12,7 @@
     "C:\\Users\\fpore\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\fpore\\.nuget\\packages\\identityframework.core\\2.3.1\\identityframework.core.2.3.1.nupkg.sha512",
     "C:\\Users\\fpore\\.nuget\\packages\\identityframework.entityframework\\2.3.1\\identityframework.entityframework.2.3.1.nupkg.sha512",
+    "C:\\Users\\fpore\\.nuget\\packages\\microsoft.aspnet.cors\\5.3.0\\microsoft.aspnet.cors.5.3.0.nupkg.sha512",
     "C:\\Users\\fpore\\.nuget\\packages\\microsoft.aspnet.identity.core\\2.2.4\\microsoft.aspnet.identity.core.2.2.4.nupkg.sha512",
     "C:\\Users\\fpore\\.nuget\\packages\\microsoft.aspnet.identity.entityframework\\2.2.4\\microsoft.aspnet.identity.entityframework.2.2.4.nupkg.sha512",
     "C:\\Users\\fpore\\.nuget\\packages\\microsoft.aspnetcore.authentication.google\\8.0.3\\microsoft.aspnetcore.authentication.google.8.0.3.nupkg.sha512",
@@ -131,6 +132,16 @@
       "warningLevel": 1,
       "message": "Package 'IdentityFramework.EntityFramework 2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "IdentityFramework.EntityFramework",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Cors 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Cors",
       "targetGraphs": [
         "net8.0"
       ]

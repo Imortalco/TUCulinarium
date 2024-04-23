@@ -24,7 +24,7 @@ namespace TUKulinarium_API.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>()
-            .HasOne(u => u.UserProfile)
+            .HasOne<UserProfile>(u => u.UserProfile)
             .WithOne(p => p.User)
             .HasForeignKey<UserProfile>(p => p.UserId);
 

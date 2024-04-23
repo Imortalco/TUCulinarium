@@ -1,0 +1,60 @@
+* {
+  cursor: pointer;
+  font-family: "Arial", sans-serif;
+  justify-content: center;
+}
+
+nav {
+  background-color: #f15a22;
+  padding: 10px 0;
+}
+.main-nav-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.navbar-brand {
+  flex: 1; /* Add this line to make the logo take up remaining space */
+  display: flex;
+  justify-content: center; /* Add this line to center the logo horizontally */
+  position: absolute;
+  left: 0;
+  padding-left: 20px;
+}
+
+.nav-link {
+  color: #fff;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #ffd700; /* Change color on hover */
+}
+
+.dropdown-toggle::after {
+  border-color: #fff transparent transparent;
+}
+
+.dropdown-item {
+  color: #000;
+}
+
+.dropdown-divider {
+  border-top: 1px solid #f15a22;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.fa-user-circle {
+  color: #fff;
+}
+
+#navbarProfileDropdown {
+  position: absolute;
+  right: 0;
+  padding-right: 20px;
+}

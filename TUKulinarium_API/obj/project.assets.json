@@ -124,6 +124,15 @@
           "lib/net45/IdentityFramework.EF.dll": {}
         }
       },
+      "Microsoft.AspNet.Cors/5.3.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/System.Web.Cors.dll": {}
+        },
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {}
+        }
+      },
       "Microsoft.AspNet.Identity.Core/2.2.4": {
         "type": "package",
         "compile": {
@@ -1985,6 +1994,20 @@
         "identityframework.entityframework.2.3.1.nupkg.sha512",
         "identityframework.entityframework.nuspec",
         "lib/net45/IdentityFramework.EF.dll"
+      ]
+    },
+    "Microsoft.AspNet.Cors/5.3.0": {
+      "sha512": "GmnL9NNGTheEcUVSzjnFaMaCEIwWdvP6mBed1ux/7M0D2yc+uzZ6UN/gAA5mva1BZmah0G+F+MVaPkoValWpmQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.cors/5.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NET.icon.png",
+        "NET_Library_EULA_ENU.txt",
+        "lib/net45/System.Web.Cors.dll",
+        "microsoft.aspnet.cors.5.3.0.nupkg.sha512",
+        "microsoft.aspnet.cors.nuspec"
       ]
     },
     "Microsoft.AspNet.Identity.Core/2.2.4": {
@@ -5047,6 +5070,7 @@
       "FluentEmail.Core >= 3.0.2",
       "FluentEmail.Smtp >= 3.0.2",
       "IdentityFramework.EntityFramework >= 2.3.1",
+      "Microsoft.AspNet.Cors >= 5.3.0",
       "Microsoft.AspNet.Identity.EntityFramework >= 2.2.4",
       "Microsoft.AspNetCore.Authentication.Google >= 8.0.3",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.3",
@@ -5093,6 +5117,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -5110,6 +5139,10 @@
           "IdentityFramework.EntityFramework": {
             "target": "Package",
             "version": "[2.3.1, )"
+          },
+          "Microsoft.AspNet.Cors": {
+            "target": "Package",
+            "version": "[5.3.0, )"
           },
           "Microsoft.AspNet.Identity.EntityFramework": {
             "target": "Package",
@@ -5179,7 +5212,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.104/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
       }
     }
   },
@@ -5210,6 +5243,16 @@
       "warningLevel": 1,
       "message": "Package 'IdentityFramework.EntityFramework 2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
       "libraryId": "IdentityFramework.EntityFramework",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Microsoft.AspNet.Cors 5.3.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Microsoft.AspNet.Cors",
       "targetGraphs": [
         "net8.0"
       ]

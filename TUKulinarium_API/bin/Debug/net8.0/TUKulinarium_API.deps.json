@@ -11,6 +11,7 @@
           "FluentEmail.Core": "3.0.2",
           "FluentEmail.Smtp": "3.0.2",
           "IdentityFramework.EntityFramework": "2.3.1",
+          "Microsoft.AspNet.Cors": "5.3.0",
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.4",
           "Microsoft.AspNetCore.Authentication.Google": "8.0.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.3",
@@ -120,6 +121,14 @@
           "lib/net45/IdentityFramework.EF.dll": {
             "assemblyVersion": "2.3.1.0",
             "fileVersion": "2.3.1.0"
+          }
+        }
+      },
+      "Microsoft.AspNet.Cors/5.3.0": {
+        "runtime": {
+          "lib/net45/System.Web.Cors.dll": {
+            "assemblyVersion": "5.3.0.0",
+            "fileVersion": "5.3.61130.707"
           }
         }
       },
@@ -1169,6 +1178,13 @@
       "sha512": "sha512-KaDQWtFc89+2vTjN3gx7aufyIGVZy5UbGGIyeGGQ1T949D9NaRFsqU7zxX/MnkVoW018dM+8gp7V244CCX5f3A==",
       "path": "identityframework.entityframework/2.3.1",
       "hashPath": "identityframework.entityframework.2.3.1.nupkg.sha512"
+    },
+    "Microsoft.AspNet.Cors/5.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GmnL9NNGTheEcUVSzjnFaMaCEIwWdvP6mBed1ux/7M0D2yc+uzZ6UN/gAA5mva1BZmah0G+F+MVaPkoValWpmQ==",
+      "path": "microsoft.aspnet.cors/5.3.0",
+      "hashPath": "microsoft.aspnet.cors.5.3.0.nupkg.sha512"
     },
     "Microsoft.AspNet.Identity.Core/2.2.4": {
       "type": "package",

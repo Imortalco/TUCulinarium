@@ -5,25 +5,41 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using TUKulinarium_API.Data;
 using TUKulinarium_API.Data.Models;
+using TUKulinarium_API.Data.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
+var corsPolicy = "_allowHeadersPolicy";
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
 services.AddControllers();
+services.AddScoped<IAuthRepository, AuthRepository>();
 services.AddIdentityApiEndpoints<User>(opt =>
 {
     opt.Password.RequiredLength = 8;
     opt.User.RequireUniqueEmail = true;
-    opt.SignIn.RequireConfirmedEmail = true;
+    opt.SignIn.RequireConfirmedEmail = false;
     opt.SignIn.RequireConfirmedPhoneNumber = false;
     opt.SignIn.RequireConfirmedAccount = false;
 })
 .AddEntityFrameworkStores<DataContext>()
 .AddDefaultTokenProviders();
+
+services.AddCors(options =>
+{
+    options.AddPolicy(
+        name: corsPolicy,
+        policy =>
+        {
+            policy.WithOrigins("https://localhost:8000",
+                                "http://localhost:4200")
+                                .AllowAnyHeader()
+                                .AllowAnyMethod()
+                                .AllowCredentials();
+
+        });
+});
 
 services.ConfigureApplicationCookie(options => { options.Cookie.SameSite = SameSiteMode.None; });
 
@@ -53,7 +69,6 @@ services.AddSwaggerGen(options =>
 services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 .AddCookie(c =>
 {
-    c.LoginPath = new PathString("/login");
     c.ExpireTimeSpan = TimeSpan.FromDays(40);
     c.Events = new CookieAuthenticationEvents
     {
@@ -80,11 +95,10 @@ services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
 services.AddDbContext<DataContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DataContext")));
 
-services.ConfigureApplicationCookie(options => { options.Cookie.SameSite = SameSiteMode.None; });
-
 services.AddFluentEmail(builder.Configuration);
 
 services.AddTransient<IEmailService, EmailService>();
+
 services.AddTransient<IEmailSender<User>, EmailSender>();
 
 
@@ -97,19 +111,21 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
+
+app.UseCors(corsPolicy);
+
+app.UseAuthentication();
+
+app.UseAuthorization();
+
 app.MapGroup("api/auth")
-.MapIdentityApi<User>();
+    .MapIdentityApi<User>();
 
 app.MapPost("/logout", async (SignInManager<User> signInManager) =>
 {
     await signInManager.SignOutAsync().ConfigureAwait(false);
 }).RequireAuthorization();
-
-app.UseAuthorization();
-
-app.UseHttpsRedirection();
-
-app.UseAuthentication();
 
 app.MapControllers();
 

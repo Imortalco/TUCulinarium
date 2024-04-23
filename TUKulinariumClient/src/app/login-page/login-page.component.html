@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<div class="form-container sign-in-container">
+  <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+    <h1>Login</h1>
+    <input type="text" placeholder="Email" formControlName="email" />
+    <input type="password" placeholder="Password" formControlName="password" />
+    <a href="#">Forgot your password?</a>
+    <button>Login</button>
+    <span>or use your account</span>
+    <div class="social-container">
+      <a href="#" class="social"><i class="fab fa-google"></i></a>
+    </div>
+  </form>
+</div>

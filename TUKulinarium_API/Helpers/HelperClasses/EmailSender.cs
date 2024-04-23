@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using TUKulinarium_API.Data.Models;
-public class EmailSender : IEmailSender<User>
+public class EmailSender: IEmailSender<User> 
 {
     private readonly IEmailService _emailService;
 

@@ -1,0 +1,28 @@
+<head>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+</head>
+<div class="form-container sign-up-container" [class.active]="isActive">
+  <form [formGroup]="signUpForm" (ngSubmit)="onSignUp()">
+    <h1>Register</h1>
+    <input type="text" placeholder="Username" formControlName="username" />
+    <input type="email" placeholder="Email" formControlName="email" />
+    <input type="password" placeholder="Password" formControlName="password" />
+    <input
+    type="password"
+    placeholder="Confirm Password"
+    formControlName="cPassword"
+    />
+    <input type="text" placeholder="First Name" formControlName="fName" />
+    <input type="text" placeholder="Last Name" formControlName="lName" />
+    <input type="tel" placeholder="Phone Number" formControlName="phone" />
+    <input type="text" placeholder="Address" formControlName="address" />
+    <button>Register</button>
+    <span>or use your google account for registration</span>
+    <div class="social-container">
+      <a href="#" class="social"><i class="fab fa-google"></i></a>
+    </div>
+  </form>
+</div>

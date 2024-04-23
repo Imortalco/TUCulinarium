@@ -130,7 +130,6 @@ C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\staticweb
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.TUKulinarium_API.props
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\scopedcss\bundle\TUKulinarium_API.styles.css
-C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\TUKulinarium_API.csproj.CopyComplete
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\TUKulinarium_API.dll
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\refint\TUKulinarium_API.dll
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\TUKulinarium_API.pdb
@@ -154,3 +153,5 @@ C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\bin\Debug\net8.0\Swashbuck
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\bin\Debug\net8.0\FluentEmail.Core.dll
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\bin\Debug\net8.0\FluentEmail.Smtp.dll
 C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\obj\Debug\net8.0\TUKulina.29ABEAD6.Up2Date
+c:\Users\fpore\Training\TUCulinarium\TUKulinarium_API\bin\Debug\net8.0\System.Web.Cors.dll
