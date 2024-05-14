@@ -6,15 +6,18 @@ using Swashbuckle.AspNetCore.Filters;
 using TUKulinarium_API.Data;
 using TUKulinarium_API.Data.Models;
 using TUKulinarium_API.Data.Repositories;
+using TUKulinarium_API.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 var configuration = builder.Configuration;
 var corsPolicy = "_allowHeadersPolicy";
 
+services.AddLogging();
 services.AddEndpointsApiExplorer();
 services.AddControllers();
 services.AddScoped<IAuthRepository, AuthRepository>();
+services.AddScoped<IUserRepository, UserRepository>();
 services.AddIdentityApiEndpoints<User>(opt =>
 {
     opt.Password.RequiredLength = 8;

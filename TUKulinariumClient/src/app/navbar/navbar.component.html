@@ -46,26 +46,21 @@
             <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-
         <!-- User profile dropdown -->
-        <div class="collapse navbar-collapse" id="navbarProfileDropdown">
-          <ul class="navbar-nav mr-auto">
-            <li ngbDropdown class="nav-item dropdown">
-              <div
-                class="nav-link dropdown-toggle"
-                id="profileDropdown"
-                ngbDropdownToggle
-                >
-                <i class="fa fa-user-circle" aria-hidden="true">username</i>
-              </div>
-              <div ngbDropdownMenu aria-labelledby="profileDropdown">
-                <a class="dropdown-item" href="#">Profile</a>
-                <a class="dropdown-item" href="#">Orders</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Logout</a>
-              </div>
-            </li>
-          </ul>
+        <div *ngIf="isLoggedIn" class="profile-btn">
+          <button
+            class="btn btn-secondary mr-2"
+            [routerLink]="['/user-profile']"
+          >
+            <i class="fa fa-user-circle" aria-hidden="true"></i> {{ username }}
+          </button>
+          <button class="btn btn-danger" (click)="onLogout()">Logout</button>
+        </div>
+
+        <div *ngIf="!isLoggedIn" class="profile-btn">
+          <button class="btn btn-primary" [routerLink]="['/auth']">
+            Sign In
+          </button>
         </div>
       </div>
     </div>

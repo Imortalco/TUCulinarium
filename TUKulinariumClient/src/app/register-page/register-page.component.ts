@@ -28,7 +28,7 @@ export class RegisterPageComponent {
       cPassword: ['', Validators.required],
       fName: ['', Validators.required],
       lName: ['', Validators.required],
-      phone: ['', Validators.pattern(/^\d{10}$/)],
+      phone: ['', Validators.pattern(/^(\+\d{1,3})?\s?(\d{3,})$/)],
       address: new FormControl(''),
     });
   }
@@ -36,21 +36,25 @@ export class RegisterPageComponent {
   onSignUp(): void {
     const user = new User(
       this.signUpForm.get('username').value,
+      this.signUpForm.get('email').value,
       this.signUpForm.get('password').value,
       this.signUpForm.get('cPassword').value,
       this.signUpForm.get('fName').value,
       this.signUpForm.get('lName').value,
-      this.signUpForm.get('email').value,
       this.signUpForm.get('phone').value,
       this.signUpForm.get('address').value
     );
 
     if (this.signUpForm.valid) {
-      this.authService.signUp(user);
-      alert('Registration successful! You can now log in.');
-    } else {
-      console.log(this.signUpForm.errors);
-      alert('Invalid fields! Please check your provided information.');
+      this.authService.signUp(user).subscribe(
+        () => {
+          alert('Registration successful! You can now log in.');
+        },
+        (error) => {
+          console.error('Signup failed:', error);
+          alert('Registration failed! Please try again.');
+        }
+      );
     }
   }
 }

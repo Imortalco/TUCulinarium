@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <h1>User Profile</h1>
+    </div>
+    <div class="card-body">
+      <div class="user-info">
+        <label for="username">Username:</label>
+        <div id="username">{{ username }}</div>
+      </div>
+      <form
+        [formGroup]="profileForm"
+        (ngSubmit)="onSave()"
+        class="profile-form"
+      >
+        <div class="form-group">
+          <label for="firstName">First Name:</label>
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name:</label>
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" formControlName="email" required />
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">Phone Number:</label>
+          <input
+            type="tel"
+            id="phoneNumber"
+            formControlName="phoneNumber"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="address">Address:</label>
+          <input type="text" id="address" formControlName="address" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,14 +1,10 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { CookieService } from 'ngx-cookie-service';
-import {
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  Validators,
-} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { HttpHeaders } from '@angular/common/http';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login-page',
@@ -19,9 +15,10 @@ export class LoginPageComponent {
   loginForm: FormGroup;
   constructor(
     private authService: AuthService,
-    private cookieService: CookieService,
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private ngbModal: NgbModal,
+    private cookieService: CookieService
   ) {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required]],
@@ -32,11 +29,12 @@ export class LoginPageComponent {
   onLogin() {
     const email = this.loginForm.get('email').value;
     const password = this.loginForm.get('password').value;
-    console.log(email, password);
     if (this.loginForm.valid) {
       return this.authService.signIn(email, password).subscribe(
         (response) => {
           console.log(response);
+          localStorage.setItem('username', email);
+          this.cookieService.set('Auth-cookie', email);
           this.router.navigate(['/home']);
         },
         (error) => {
@@ -50,13 +48,7 @@ export class LoginPageComponent {
     }
   }
 
-  storeCookies(headers: HttpHeaders): void {
-    const cookies = headers.getAll('Set-Cookie');
-    cookies.forEach((cookie) => {
-      this.cookieService.set(
-        cookie.split(';')[0],
-        cookie.split(';')[0].split('=')[1]
-      );
-    });
+  openDialog() {
+    const modalRef = this.ngbModal.open(ForgotPasswordComponent);
   }
 }

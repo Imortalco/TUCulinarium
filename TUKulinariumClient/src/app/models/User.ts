@@ -1,12 +1,12 @@
 export class User {
-  private UserName: string;
-  private Email: string;
-  private Password: string;
-  private ConfirmPassword: string;
-  private FirstName: string;
-  private LastName: string;
-  private PhoneNumber: string;
-  private Address: string;
+   UserName: string;
+   Email: string;
+   Password: string;
+   ConfirmPassword: string;
+   FirstName: string;
+   LastName: string;
+   PhoneNumber: string;
+   Address: string;
 
   constructor(
     username: string,
