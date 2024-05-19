@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mqMjYQ6Y97m6e63eyx7WJ+vTIEegjKPURZ8wyPRsJgUJaBye2V+9pf3C4Ke7ChhxztGaL/nki2GwjJ9WppssEg==",
+  "dgSpecHash": "vt0MTsj/UNCwVNCf+uVl7Uu5buTLxSngnKVSd1GR9kquLoVWb0mrzmSqM7Ck94au6rs454sRvZSHB8F3Dh6h/A==",
   "success": true,
-  "projectFilePath": "c:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\TUKulinarium_API.csproj",
+  "projectFilePath": "C:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\TUKulinarium_API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\fpore\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\fpore\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

@@ -16,6 +16,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { DishCardComponent } from './dish-card/dish-card.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
     NavbarComponent,
     ForgotPasswordComponent,
     UserProfileComponent,
+    DishCardComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

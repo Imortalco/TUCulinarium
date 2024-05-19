@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,10 @@ const routes: Routes = [
   {
     path:'user-profile',
     component: UserProfileComponent,
+  },
+  {
+    path:'dishes',
+    component:MenuComponent,
   }
 ];
 

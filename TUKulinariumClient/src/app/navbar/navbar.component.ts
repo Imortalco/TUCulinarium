@@ -33,7 +33,7 @@ export class NavbarComponent {
     this.authService.signOut();
     this.cookieService.deleteAll();
     localStorage.removeItem('username');
-    this.router.navigateByUrl('/');
+    window.location.reload();
     alert('Successfully logged out');
   }
 }

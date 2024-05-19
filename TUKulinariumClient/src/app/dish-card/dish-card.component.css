@@ -1,0 +1,56 @@
+.card {
+  width: 100%; /* Make the card take full width of its container */
+  margin-bottom: 20px; /* Space below the card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Clip the content to fit the rounded corners */
+}
+
+.card-img-top {
+  width: 100%; /* Make the image take full width of the card */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 200px; /* Limit the height */
+  object-fit: cover; /* Cover the container */
+}
+
+.card-body {
+  padding: 15px; /* Padding inside the card body */
+  text-align: center; /* Center align the text */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Adjust title font size */
+  margin-bottom: 10px; /* Space below the title */
+}
+
+.card-text {
+  font-size: 1rem; /* Adjust text font size */
+  color: #666; /* Set text color */
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px; /* Button padding */
+  border: none; /* Remove default border */
+  border-radius: 20px; /* Rounded corners */
+  background-color: #3498db; /* Set button background color */
+  color: #ffffff; /* Set button text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.btn:hover {
+  background-color: #2980b9; /* Darker background color on hover */
+}
+
+.btn-primary {
+  margin-right: 10px; /* Margin to the right of the button */
+}
+
+.btn-secondary {
+  background-color: #95a5a6; /* Secondary button color */
+}
+
+.btn-secondary:hover {
+  background-color: #7f8c8d; /* Darker secondary button on hover */
+}
