@@ -20,6 +20,7 @@ import { DishCardComponent } from './dish-card/dish-card.component';
 import { MenuComponent } from './menu/menu.component';
 import { DishDetailsComponent } from './dish-details/dish-details.component';
 import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { CartComponent } from './cart/cart.component';
     MenuComponent,
     DishDetailsComponent,
     CartComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,9 +45,8 @@ import { CartComponent } from './cart/cart.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    FontAwesomeModule
   ],
   providers: [AuthService, CookieService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

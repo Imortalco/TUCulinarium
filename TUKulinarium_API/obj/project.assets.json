@@ -5090,11 +5090,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\TUKulinarium_API.csproj",
+      "projectUniqueName": "c:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\TUKulinarium_API.csproj",
       "projectName": "TUKulinarium_API",
-      "projectPath": "C:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\TUKulinarium_API.csproj",
+      "projectPath": "c:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\TUKulinarium_API.csproj",
       "packagesPath": "C:\\Users\\fpore\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\obj\\",
+      "outputPath": "c:\\Users\\fpore\\Training\\TUCulinarium\\TUKulinarium_API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fpore\\AppData\\Roaming\\NuGet\\NuGet.Config",

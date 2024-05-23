@@ -30,18 +30,23 @@
             <div class="nav-link" [routerLink]="['/dishes']">Menu</div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#" [routerLink]="['/contact']">Contact</a>
           </li>
         </ul>
 
         <div class="cart-icon">
           <a class="nav-link" [routerLink]="['/cart']">
-            <img src="../../assets/remove-from-cart_9285889.png" height="32">
+            <img src="../../assets/remove-from-cart_9285889.png" height="32" />
           </a>
         </div>
 
         <div *ngIf="isLoggedIn" class="profile-btn">
-            <img src="../../assets/user-ic.png" height="32" [routerLink]="['/user-profile']"> {{ username }}
+          <img
+            src="../../assets/user-ic.png"
+            height="32"
+            [routerLink]="['/user-profile']"
+          />
+          {{ username }}
           <button class="btn btn-danger" (click)="onLogout()">Logout</button>
         </div>
 
