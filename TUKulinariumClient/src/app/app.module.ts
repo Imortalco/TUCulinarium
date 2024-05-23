@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';

@@ -21,30 +21,30 @@ export class MenuComponent {
   dishes$: Dish[] = [
     {
       DishId: 1,
-      DishName: 'Monster Burger',
+      DishName: 'Speciale Burger',
       DishIngredients: [
-        'Onions',
-        'Monster Sauce',
-        'Pulled Pork',
+        'Peppers',
+        'Mayo',
+        'Pulled Chicken',
         'Pickles',
         'Melted Cheddar',
       ],
-      DishPrice: 10,
+      DishPrice: 14,
     },
     {
       DishId: 2,
-      DishName: 'Monster Burger',
+      DishName: 'Beef Burger',
       DishIngredients: [
         'Onions',
-        'Monster Sauce',
-        'Pulled Pork',
+        'BBQ Sauce',
+        'Beef Patty',
         'Pickles',
-        'Melted Cheddar',
+        'Gauda',
       ],
-      DishPrice: 10,
+      DishPrice: 12,
     },
     {
-      DishId: 2,
+      DishId: 3,
       DishName: 'Monster Burger',
       DishIngredients: [
         'Onions',
