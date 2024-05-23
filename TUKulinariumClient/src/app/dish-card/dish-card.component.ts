@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Dish } from '../models/Dish';
+import { CartService } from '../services/cart.service';
 
 @Component({
   selector: 'app-dish-card',
@@ -8,16 +9,12 @@ import { Dish } from '../models/Dish';
 })
 export class DishCardComponent {
   @Input() dish: Dish;
-  @Output() onAddToCart: EventEmitter<any> = new EventEmitter();
+  @Input() category: string;
 
-  constructor() {
-    
-  }
-  addToCart():void{
-    console.log('Dish added to cart');
-  }
-
-  navToCustomization():void{
-    console.log('navToCustomization');
+  constructor(protected cartService: CartService) {}
+  addToCart(dish: Dish): void {
+    if (dish) {
+      this.cartService.addToCart(dish, 1);
+    }
   }
 }

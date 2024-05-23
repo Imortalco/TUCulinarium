@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { Dish } from '../models/Dish';
 import { DishService } from '../services/dish.service';
 
@@ -71,6 +71,5 @@ export class MenuComponent {
   switchCategory(category: string): void {
     this.currentCategory = category;
     this.getDishesByCategory(category);
-    console.log(this.currentCategory);
   }
 }

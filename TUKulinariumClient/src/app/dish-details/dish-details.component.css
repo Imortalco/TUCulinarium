@@ -1,0 +1,57 @@
+.container {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 20px; /* Add some padding for better spacing */
+  height: auto;
+  width: 75%;
+  min-height: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 75%; /* Make the card take full width of its container */
+  height: 100%;
+  margin-bottom: 20px; /* Space below the card */
+  overflow: hidden; /* Clip the content to fit the rounded corners */
+  border-radius: 10px; /* Add rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+}
+
+.card-img {
+  width: 100%;
+  height: 50%;
+  height: auto;
+  border-top-left-radius: 10px; /* Add rounded corners to top left and top right */
+  border-bottom-left-radius: 10px;
+  object-fit: cover; /* This ensures the image fills the container */
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  width: 120px;
+}
+
+.btn-outline-primary {
+  border-color: #3498db;
+  color: #3498db;
+}
+
+.btn-outline-primary:hover {
+  background-color: #3498db;
+  color: white;
+}

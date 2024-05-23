@@ -1,10 +1,22 @@
 <div class="card">
-  <img [src]="'assets/images.png'" alt="{{ dish.DishName }}" class="card-img-top">
+  <img
+    [src]="'assets/images.png'"
+    alt="{{ dish.DishName }}"
+    class="card-img-top"
+  />
   <div class="card-body">
     <h5 class="card-title">{{ dish.DishName }}</h5>
-    <p class="card-text">{{ dish.DishIngredients }}</p>
+    <p class="card-text" *ngIf="dish.DishIngredients">{{ dish.DishIngredients }}</p>
     <p class="card-text">Price: {{ dish.DishPrice }}</p>
-    <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
-    <button class="btn btn-secondary" (click)="navToCustomization()">Customize</button>
+    <button class="btn btn-primary" (click)="addToCart(dish)">
+      Add to Cart
+    </button>
+    <button
+      class="btn btn-secondary"
+      [routerLink]="['/dish/', dish.DishId]"
+      [queryParams]="{ category: category, dishId: dish.DishId }"
+    >
+      Customize
+    </button>
   </div>
 </div>

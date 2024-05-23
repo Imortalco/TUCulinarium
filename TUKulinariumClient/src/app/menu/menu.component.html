@@ -4,7 +4,7 @@
       <button *ngFor="let category of categories" (click)="switchCategory(category)">{{ category }}</button>
     </div>
     <div class="dishes-grid">
-      <app-dish-card *ngFor="let dish of dishes$" [dish]="dish" ></app-dish-card>
+      <app-dish-card *ngFor="let dish of dishes$" [dish]="dish" [category]="currentCategory" ></app-dish-card>
     </div>
   </div>
 </div>

@@ -18,6 +18,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { DishCardComponent } from './dish-card/dish-card.component';
 import { MenuComponent } from './menu/menu.component';
+import { DishDetailsComponent } from './dish-details/dish-details.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { MenuComponent } from './menu/menu.component';
     UserProfileComponent,
     DishCardComponent,
     MenuComponent,
+    DishDetailsComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,

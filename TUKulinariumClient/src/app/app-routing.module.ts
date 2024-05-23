@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginPageComponent } from './login-page/login-page.component';
-import { RegisterPageComponent } from './register-page/register-page.component';
-import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AuthPageComponent } from './auth-page/auth-page.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { MenuComponent } from './menu/menu.component';
+import { DishDetailsComponent } from './dish-details/dish-details.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {
@@ -29,6 +28,14 @@ const routes: Routes = [
   {
     path:'dishes',
     component:MenuComponent,
+  },
+  {
+    path:'dish/:id',
+    component:DishDetailsComponent
+  },
+  {
+    path: 'cart',
+    component: CartComponent,
   }
 ];
 
