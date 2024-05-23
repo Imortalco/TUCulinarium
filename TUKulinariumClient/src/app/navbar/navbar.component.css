@@ -38,19 +38,18 @@ nav {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-
 button {
   margin: 10px;
 }
 
 .profile-btn {
   position: absolute;
-  right: 92px;
-  padding-right: 10px;
+  right: 84px;
+  padding-right: 20px;
 }
 .cart-icon {
   position: absolute;
-  right: 240px; /* Adjust the position of the cart icon */
+  right: 320px; /* Adjust the position of the cart icon */
   top: 10px; /* Adjust the vertical alignment */
   font-size: 24px; /* Adjust the size of the cart icon */
   color: #fff;
